@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/colorSetStyle.css" />
+    <link rel="shortcut icon" href="../image/icon.png" type="image/png" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"
+      integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>TrueColor | Palette</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="header__container">
+          <div class="header__nav">
+            <a href="main.html" class="header__button-back">
+              <i class="fa-solid fa-arrow-left"></i>
+              Back
+            </a>
+            <div class="header__dropdown">
+              <button class="header__button-select-color" onclick="openMenu()">
+                <span
+                  >Copy Format: HEX (#AA1234)
+                  <i class="fa-sharp fa-solid fa-sort-down"></i>
+                </span>
+              </button>
+              <div class="header__select-format">
+                <button class="header__button-format">HEX (#AA1234)</button>
+                <button class="header__button-format">HEX (AA1234)</button>
+                <button class="header__button-format">RGB - (1, 2, 3)</button>
+                <button class="header__button-format">
+                  RGBA - (1, 2, 3, 0.4)
+                </button>
+              </div>
+            </div>
+            <div class="header__logo">TRUE COLOR</div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main__grid-colors">
+          <div class="grid-colors"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__container">Name</div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/8c65f1f1c3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/colorSet.js"></script>
+  </body>
+</html>

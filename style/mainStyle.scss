@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Barlow";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.header {
+  &__container {
+    height: 70px;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    @media (max-width: 1180px) {
+      max-width: 780px !important;
+    }
+    @media (max-width: 780px) {
+      max-width: 380px !important;
+    }
+  }
+  &__logo {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width: 380px) {
+    margin: 0 10px 30px 10px;
+  }
+  margin-bottom: 30px;
+}
+
+.main {
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 29px;
+    margin-bottom: 30px;
+    color: rgb(0, 0, 0);
+    @media (max-width: 780px) {
+      display: none !important;
+    }
+    img {
+      height: 25px;
+      width: 25px;
+    }
+  }
+  &__container {
+    margin: 0 auto;
+    max-width: 1180px;
+    width: 100%;
+    @media (max-width: 1180px) {
+      max-width: 780px;
+    }
+  }
+  &__title-image-generate {
+    padding-right: 10px;
+  }
+  &__generate-color-card {
+    margin: 0 auto;
+    margin-bottom: 30px !important;
+    width: auto !important;
+  }
+  &__title-color-set {
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+
+    @media (max-width: 1180px) {
+      padding: 0;
+    }
+    span {
+      font-size: 22px;
+      width: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+
+  &__grid {
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  &__color-card {
+    max-width: 380px;
+    width: 100%;
+    @media (max-width: 380px) {
+      margin: 0 10px;
+    }
+  }
+
+  margin-bottom: 30px;
+}
+
+.color-card {
+  text-decoration: none;
+  display: flex;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  &__container {
+    border-radius: 4px;
+    width: 100%;
+    padding: 15px 15px;
+  }
+  &__grid {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    height: 160px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+  }
+
+  &__text {
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      height: 18px;
+      width: 18px;
+    }
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 24px;
+  }
+  &__color {
+    width: 20%;
+
+    height: 40px;
+    &:first-child {
+      border-radius: 4px 0 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 4px 0;
+    }
+    &:nth-child(5) {
+      border-radius: 0 4px 0 0;
+    }
+    &:nth-child(16) {
+      border-radius: 0 0 0 4px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.generate-color-card {
+  &__color {
+    width: 16.6%;
+  }
+  &__color-1 {
+    background: #ffc312;
+    border-radius: 4px 0px 0px 4px;
+  }
+
+  &__color-2 {
+    background: #c4e538;
+  }
+
+  &__color-3 {
+    background: #12cbc4;
+  }
+
+  &__color-4 {
+    background: #fda7df;
+  }
+
+  &__color-5 {
+    background: #ed4c67;
+  }
+
+  &__color-6 {
+    background: #833471;
+    border-radius: 0px 4px 4px 0px;
+  }
+}
+
+.footer {
+  background-color: #2f3542;
+  color: #ffffff;
+  line-height: 10px;
+
+  &__container {
+    max-width: 1180px;
+    margin: 0 auto 40px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+
+    @media (max-width: 1180px) {
+      max-width: 780px;
+    }
+
+    @media (max-width: 780px) {
+      max-width: 420px;
+    }
+  }
+  &__logo {
+    @media (max-width: 780px) {
+      padding: 0 20px;
+    }
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+  }
+  &__text {
+    @media (max-width: 780px) {
+      padding: 0 20px;
+    }
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 36px;
+  }
+}
