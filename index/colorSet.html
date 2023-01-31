@@ -26,15 +26,21 @@
             <div class="header__dropdown">
               <button class="header__button-select-color" onclick="openMenu()">
                 <span
-                  >Copy Format: HEX (#AA1234)
+                  >HEX (#AA1234)
                   <i class="fa-sharp fa-solid fa-sort-down"></i>
                 </span>
               </button>
               <div class="header__select-format">
-                <button class="header__button-format">HEX (#AA1234)</button>
-                <button class="header__button-format">HEX (AA1234)</button>
-                <button class="header__button-format">RGB - (1, 2, 3)</button>
-                <button class="header__button-format">
+                <button class="header__button-format" onclick="selectFormat(event, this)">
+                  HEX (#AA1234)
+                </button>
+                <button class="header__button-format" onclick="selectFormat(event, this)">
+                  HEX (AA1234)
+                </button>
+                <button class="header__button-format" onclick="selectFormat(event, this)">
+                  RGB - (1, 2, 3)
+                </button>
+                <button class="header__button-format" onclick="selectFormat(event, this)">
                   RGBA - (1, 2, 3, 0.4)
                 </button>
               </div>

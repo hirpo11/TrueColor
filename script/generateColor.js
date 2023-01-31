@@ -63,7 +63,7 @@ const setRandomColor = (isInitial) => {
     setColor(button, color);
     text.textContent = convertColorFormat(color);
   });
-  
+
   updateColorsHash(colors);
 };
 
@@ -104,12 +104,9 @@ const openMenu = () => {
   document.querySelector(".header__select-format").classList.toggle("show");
 };
 
-const selectFormat = () => {
-  document.querySelector(".header__button-format");
-};
+const selectFormat = (event, element) => {
+  select = element.textContent.trim();
 
-document.onclick = (event) => {
-  select = event.target.textContent.trim();
   selectColorButtonText = document
     .querySelector(".header__button-select-color")
     .querySelector("span");
@@ -117,30 +114,30 @@ document.onclick = (event) => {
   downArrow = `<i class="fa-sharp fa-solid fa-sort-down"></i>`;
 
   if (select === "HEX (#AA1234)") {
-    selectColorButtonText.innerHTML = `Copy Format: HEX (#AA1234)` + downArrow;
+    selectColorButtonText.innerHTML = `HEX (#AA1234)` + downArrow;
+
     formatColor = "HEX#";
-    document.querySelector(".header__select-format").classList.remove("show");
+    document.querySelector(".header__select-format").classList.toggle("show");
+    console.log(document.querySelector(".header__select-format"));
     setRandomColor(true);
   }
 
   if (select === "HEX (AA1234)") {
-    selectColorButtonText.innerHTML = `Copy Format: HEX (AA1234)` + downArrow;
+    selectColorButtonText.innerHTML = `HEX (AA1234)` + downArrow;
     formatColor = "HEX";
     document.querySelector(".header__select-format").classList.remove("show");
     setRandomColor(true);
   }
 
   if (select === "RGB - (1, 2, 3)") {
-    selectColorButtonText.innerHTML =
-      `Copy Format: RGB - (1, 2, 3)` + downArrow;
+    selectColorButtonText.innerHTML = `RGB - (1, 2, 3)` + downArrow;
     formatColor = "RGB";
     document.querySelector(".header__select-format").classList.remove("show");
     setRandomColor(true);
   }
 
   if (select === "RGBA - (1, 2, 3, 0.4)") {
-    selectColorButtonText.innerHTML =
-      `Copy Format: RGBA - (1, 2, 3, 0.4)` + downArrow;
+    selectColorButtonText.innerHTML = `RGBA - (1, 2, 3, 0.4)` + downArrow;
     formatColor = "RGBA";
     document.querySelector(".header__select-format").classList.remove("show");
     setRandomColor(true);

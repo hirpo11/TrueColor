@@ -31,8 +31,8 @@ const copyToClickboard = (text) => {
 document.querySelector(".footer__container").innerHTML =
   "Palette #" + localStorage.getItem("Number");
 
-document.onclick = (event) => {
-  select = event.target.textContent.trim();
+const selectFormat = (event, element) => {
+  select = element.textContent.trim();
   selectColorButtonText = document
     .querySelector(".header__button-select-color")
     .querySelector("span");
@@ -40,30 +40,30 @@ document.onclick = (event) => {
   downArrow = `<i class="fa-sharp fa-solid fa-sort-down"></i>`;
 
   if (select === "HEX (#AA1234)") {
-    selectColorButtonText.innerHTML = `Copy Format: HEX (#AA1234)` + downArrow;
+    selectColorButtonText.innerHTML = `HEX (#AA1234)` + downArrow;
     formatColor = "HEX#";
+    
     document.querySelector(".header__select-format").classList.remove("show");
+    console.log(document.querySelector(".header__select-format"));
     setFormatText();
   }
 
   if (select === "HEX (AA1234)") {
-    selectColorButtonText.innerHTML = `Copy Format: HEX (AA1234)` + downArrow;
+    selectColorButtonText.innerHTML = `HEX (AA1234)` + downArrow;
     formatColor = "HEX";
     document.querySelector(".header__select-format").classList.remove("show");
     setFormatText();
   }
 
   if (select === "RGB - (1, 2, 3)") {
-    selectColorButtonText.innerHTML =
-      `Copy Format: RGB - (1, 2, 3)` + downArrow;
+    selectColorButtonText.innerHTML = `RGB - (1, 2, 3)` + downArrow;
     formatColor = "RGB";
     document.querySelector(".header__select-format").classList.remove("show");
     setFormatText();
   }
 
   if (select === "RGBA - (1, 2, 3, 0.4)") {
-    selectColorButtonText.innerHTML =
-      `Copy Format: RGBA - (1, 2, 3, 0.4)` + downArrow;
+    selectColorButtonText.innerHTML = `RGBA - (1, 2, 3, 0.4)` + downArrow;
     formatColor = "RGBA";
     document.querySelector(".header__select-format").classList.remove("show");
     setFormatText();
@@ -87,7 +87,6 @@ const setFormatText = () => {
             itemText.classList = "item__text";
             itemText.setAttribute("data-type", "copy");
             setColor(itemText, el);
-            console.log(formatColor);
             if (formatColor === "HEX#") {
               itemText.innerHTML += `${el.toUpperCase()}`;
             }
@@ -122,7 +121,6 @@ const setFormatText = () => {
 };
 
 const hexToRgb = (hex) => {
-  console.log(hex);
   return (
     "RGB(" +
     parseInt(hex[0], 16) +
@@ -145,6 +143,5 @@ const hexToRgba = (hex) => {
     ", 1.0)"
   );
 };
-
 
 setFormatText();

@@ -57,12 +57,24 @@ body {
 .header__button-back i {
   padding-right: 5px;
 }
+@media (max-width: 768px) {
+  .header__button-back {
+    padding-right: 20px;
+  }
+}
 .header__logo {
   font-weight: 700;
   line-height: 36px;
   display: flex;
   align-items: center;
   color: #000;
+}
+@media (max-width: 768px) {
+  .header__logo {
+    color: #fff;
+    padding-left: 20px;
+    width: 75px;
+  }
 }
 .header__logo:hover {
   cursor: pointer;
@@ -82,10 +94,23 @@ body {
   padding-left: 10px;
   color: #fff;
 }
+@media (max-width: 768px) {
+  .header__button-select-color {
+    width: 200px;
+  }
+}
 .header__button-select-color span {
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
+}
+.header__button-select-color span::before {
+  content: "Copy Format:";
+}
+@media (max-width: 768px) {
+  .header__button-select-color span::before {
+    content: "";
+  }
 }
 .header__button-select-color:hover {
   cursor: pointer;
@@ -125,6 +150,11 @@ body {
 .header__select-format button:last-child {
   border-bottom: 0;
   border-radius: 0 0 4px 4px;
+}
+@media (max-width: 768px) {
+  .header__select-format button {
+    width: 200px;
+  }
 }
 
 .main {
@@ -193,7 +223,7 @@ body {
   justify-content: center;
 }
 .footer__button-generate-color {
-  padding: 10px;
+  padding: 10px 20px;
   transition: all 0.2s;
   align-self: center;
   color: #fff;
