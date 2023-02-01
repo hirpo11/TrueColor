@@ -6,7 +6,7 @@ const sendRequest = (method, url, body = null) => {
     return response.json();
   });
 };
-
+ 
 sendRequest("GET", requestURL)
   .then((data) => {
     data.map((card, index) => {

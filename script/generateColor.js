@@ -145,7 +145,7 @@ const selectFormat = (event, element) => {
 };
 
 const convertColorFormat = (color) => {
-  colorFormat = "";
+  let colorFormat = "";
   if (formatColor === "HEX#") colorFormat = color;
 
   if (formatColor === "HEX") colorFormat = color.replace("#", "");
