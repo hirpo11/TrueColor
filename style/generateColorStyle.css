@@ -21,10 +21,6 @@ body {
   justify-content: space-between;
 }
 
-.show {
-  display: block !important;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -79,8 +75,28 @@ body {
 .header__logo:hover {
   cursor: pointer;
 }
+.header .show {
+  display: block !important;
+  -webkit-animation: openMenu 0.5s linear forwards;
+          animation: openMenu 0.5s linear forwards;
+}
+@-webkit-keyframes openMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes openMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .header__button-select-color {
-  transition: all 0.2s;
   align-self: center;
   width: 300px;
   padding: 8px 0px;

@@ -21,14 +21,25 @@ body {
   justify-content: space-between;
 }
 
-.show {
-  display: block !important;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
   height: 50px;
+
+  .show {
+    display: block !important;
+    animation: openMenu 0.5s linear forwards;
+  }
+
+  @keyframes openMenu {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   &__container {
     width: 100%;
     display: flex;
@@ -86,7 +97,7 @@ body {
     transition: all 0.2s;
     align-self: center;
     width: 300px;
-    
+
     padding: 8px 0px;
     color: #fff;
 
@@ -102,8 +113,6 @@ body {
       padding: 0 20px;
       display: flex;
       justify-content: space-between;
-      
-      
     }
     span::before {
       content: "Copy Format:";
@@ -112,7 +121,6 @@ body {
       }
     }
 
-    
     &:hover {
       cursor: pointer;
     }
@@ -183,14 +191,19 @@ body {
   width: 100%;
   justify-content: start;
   align-items: center;
-  
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
   &__item {
     flex-basis: 20%;
     height: 25%;
     width: 100%;
     @media (max-width: 768px) {
-      flex-basis: 25%;
-      height: 20%;
+      flex-basis: 20%;
+      height: 25%;
+      width: 25%;
     }
   }
 
